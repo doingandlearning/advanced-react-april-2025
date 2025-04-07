@@ -4,8 +4,8 @@
 - Kevin Cunningham
   - kevin@kevincunningham.co.uk
   - https://kevincunningham.co.uk
-- Repo link: 
-- Miro link: 
+- Repo link: https://github.com/doingandlearning/advanced-react-april-2025
+- Miro link: https://miro.com/app/board/uXjVIFuzP5E=/?share_link_id=58818518517 
 - Feedback link: 
 
 ## Timings:
