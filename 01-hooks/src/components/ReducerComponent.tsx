@@ -12,13 +12,28 @@ interface Action {
   error?: string
 }
 
-function reducer(state, action: Action) {
+function reducer(state: typeof initialState, action: Action) {
   switch (action.type) {
     case 'updateField':
       return {
         ...state,
         [action!.field as string]: action!.value
       }
+    case 'setError':
+      return {
+        ...state,
+        errors: {
+          ...state.errors,
+          [action.field as string]: action.error
+        }
+      }
+    case 'clearErrors':
+      return {
+        ...state,
+        errors: {}
+      }
+    case 'clearForm':
+      return { ...initialState }
     default:
       throw new Error("Unknown action type")
   }
@@ -38,7 +53,7 @@ export default function FormComponent() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (state.name === "Kevin") {
+    if (state.username === "Kevin") {
       dispatch({
         type: 'setError',
         field: 'username',
@@ -50,6 +65,8 @@ export default function FormComponent() {
       dispatch({ type: 'clearForm' })
     }
   }
+
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
