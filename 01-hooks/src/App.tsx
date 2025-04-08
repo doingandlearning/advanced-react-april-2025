@@ -1,11 +1,21 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const buttonRef = React.useRef<null | HTMLButtonElement>(null)
 
+  React.useEffect(() => {
+    console.log("useEffect was run!")
+    if (!buttonRef.current) {
+      return
+    }
+    buttonRef.current.focus()
+  }, [buttonRef])
+  console.log(buttonRef.current)
+  console.log("I was rendered!")
   return (
     <>
       <div>
@@ -18,7 +28,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button ref={buttonRef} onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
         <p>
