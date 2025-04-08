@@ -32,7 +32,7 @@ We may also have some time left over to explore other React adjacent topics that
    - useReducer
    - useCallback
    - useLayoutEffect
-   - useContext (?)
+   - useContext 
 
 2. **Custom Hooks**
 
