@@ -1,49 +1,9 @@
 import React from "react"
+import { FormContext } from "../context/FormContext"
 
-const initialState = {
-  "username": "",
-  "email": "",
-  "errors": {}
-
-}
-// type
-interface Action {
-  type: string,
-  field?: keyof typeof initialState
-  value?: string
-  error?: string
-}
-
-function reducer(state: typeof initialState, action: Action) {
-  switch (action.type) {
-    case 'updateField':
-      return {
-        ...state,
-        [action!.field as string]: action!.value
-      }
-    case 'setError':
-      return {
-        ...state,
-        errors: {
-          ...state.errors,
-          [action.field as string]: action.error
-        }
-      }
-    case 'clearErrors':
-      return {
-        ...state,
-        errors: {}
-      }
-    case 'clearForm':
-      return { ...initialState }
-    default:
-      throw new Error("Unknown action type")
-  }
-
-}
 
 export default function FormComponent() {
-  const [state, dispatch] = React.useReducer(reducer, initialState)
+  const { state, dispatch } = React.useContext(FormContext)
 
   const handleChange = (e) => {
     dispatch({

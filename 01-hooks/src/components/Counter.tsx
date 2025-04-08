@@ -1,8 +1,10 @@
 import { useReducer } from 'react';
+import { FormContext } from '../context/FormContext';
+import React from 'react';
 
 const initialState = { count: 0 };
 
-type ReducerActions = "increment" | "decrement"
+type ReducerActions = "increment" | "decrement" | "reset" | "incrementLoads"
 
 function reducer(state: typeof initialState, action: { type: ReducerActions }) {
   switch (action.type) {
@@ -10,6 +12,10 @@ function reducer(state: typeof initialState, action: { type: ReducerActions }) {
       return { count: state.count + 1 };
     case 'decrement':
       return { count: state.count - 1 };
+    case 'incrementLoads':
+      return { count: state.count + 5 }
+    case 'reset':
+      return { count: 0 }
     default:
       throw new Error();
   }
@@ -17,12 +23,17 @@ function reducer(state: typeof initialState, action: { type: ReducerActions }) {
 
 export default function Counter() {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  const { state: formState } = React.useContext(FormContext)
   return (
     <div>
+      <p>Welcome {formState.username}</p>
       <p>Count: {state.count}</p>
       <button onClick={() => dispatch({ type: 'increment' })}>+</button>
       <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+      <button onClick={() => dispatch({ type: 'reset' })}>0</button>
+      <button onClick={() => dispatch({ type: 'incrementLoads' })}>++</button>
     </div>
   );
 }
+// Add a reset state
+// Add a +5 -5
