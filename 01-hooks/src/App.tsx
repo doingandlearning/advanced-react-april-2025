@@ -5,6 +5,7 @@ import './App.css'
 import FormComponent from './components/ReducerComponent'
 import Counter from './components/Counter'
 import { FormContext, FormProvider } from './context/FormContext'
+import Box from './components/Box'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +30,7 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
+      <Box />
       <FormProvider>
         <FormComponent />
         <Counter />
