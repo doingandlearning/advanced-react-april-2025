@@ -2,7 +2,9 @@ import React from "react"
 
 const initialState = {
   "username": "",
-  "email": ""
+  "email": "",
+  "errors": {}
+
 }
 // type
 interface Action {

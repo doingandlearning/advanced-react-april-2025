@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import FormComponent from './components/ReducerComponent'
+import Counter from './components/Counter'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,8 +16,7 @@ function App() {
     }
     buttonRef.current.focus()
   }, [buttonRef])
-  console.log(buttonRef.current)
-  console.log("I was rendered!")
+
   return (
     <>
 
@@ -29,6 +29,7 @@ function App() {
         </p>
       </div>
       <FormComponent />
+      <Counter />
     </>
   )
 }
