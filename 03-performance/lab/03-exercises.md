@@ -42,3 +42,7 @@ Steps:
 1. Use React DevTools Profiler tab to record interaction.
 2. Identify unnecessary renders or expensive updates.
 3. Use tools like vite-plugin-visualizer to audit your bundle.
+
+----
+
+## Exercise 5: useTransition
