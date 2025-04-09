@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`it errors when the fetch is unsuccessful 1`] = `[Error: We had a problem getting the data.]`;
+
+exports[`it errors when the fetch is unsuccessful 2`] = `[Error: We had a problem getting your data.]`;

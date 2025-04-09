@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`displays the correct greeting when name is entered 1`] = `
+<input
+  placeholder="Enter your name"
+  type="text"
+  value=""
+/>
+`;
