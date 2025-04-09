@@ -4,6 +4,7 @@ import { useTheme } from '../../context/ThemeContext';
 function GreetingInput() {
 	const [name, setName] = useState('');
 	const { theme, toggleTheme } = useTheme()
+	throw new Error()
 	return (
 		<div>
 			<input
