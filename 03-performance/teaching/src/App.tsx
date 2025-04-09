@@ -1,6 +1,7 @@
 import './App.css'
 import React, { Suspense } from 'react'
 import Counter from './component/Counter'
+import LongList from './component/LongList'
 
 const LazyComponent = React.lazy(() => import("./component/LazyComponent"))
 
@@ -16,6 +17,7 @@ function App() {
   const total = React.useMemo(() => calculateTotal(amount), [amount])
   return (
     <>
+      <LongList />
       <button onClick={() => setShow(!show)}>Show</button>
       <Counter />
       <input value={amount} onChange={(e) => setAmount(e.target.value)} />
