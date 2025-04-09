@@ -9,7 +9,6 @@ type Tab = 'about' | 'posts' | 'contact';
 
 const Demo = () => {
   const [tab, setTab] = useState<Tab>('about');
-
   const selectTab = (tab: Tab) => {
     setTab(tab);
   };
