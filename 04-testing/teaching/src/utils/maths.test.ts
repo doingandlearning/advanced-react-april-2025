@@ -19,8 +19,16 @@ describe("adds two numbers correctly", () => {
       expect(actual).toBe(expected);
     });
   }
+
+  test.each(testCases)(`Testing that %s`, ({ a, b, expected }) => {
+    const actual = add(a, b);
+    expect(actual).toBe(expected);
+  });
 });
 
 test("doesn't add non-numbers", () => {
-  add("a", true);
+  expect(() => add("a" as any, true as any)).toThrow();
+  expect(() =>
+    add("a" as any, true as any)
+  ).toThrowErrorMatchingInlineSnapshot(`[TypeError: Both arguments should be numbers]`);
 });
